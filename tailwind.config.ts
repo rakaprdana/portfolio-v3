@@ -1,4 +1,3 @@
-import { Poppins } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -14,6 +13,9 @@ export default {
       Montserrat: ["Montserrat", "sans-serif"],
     },
     extend: {
+      animation: {
+        text: "textMove 10s linear infinite",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

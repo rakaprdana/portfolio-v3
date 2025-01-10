@@ -1,5 +1,6 @@
 import Navbar from "@/components/elements/navbar";
 import AboutSection from "@/components/layout/aboutsect";
+import ExperienceSection from "@/components/layout/expsect";
 import HeroSection from "@/components/layout/herosect";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <main className="flex flex-col">
         <HeroSection />
         <AboutSection />
+        <ExperienceSection />
       </main>
     </div>
   );
