@@ -1,5 +1,5 @@
 import Image from "next/image";
-import PhotoProfile from "../../../public/image/no-bg.png";
+import PhotoProfile from "../../../public/image/me2-nobg.png";
 import { GitHub, Instagram, LinkedIn } from "@mui/icons-material";
 
 const AboutSection = () => {
@@ -10,7 +10,7 @@ const AboutSection = () => {
         <Image
           src={PhotoProfile}
           alt="me"
-          className="w-1/4 rounded-full border-4 border-gray-700 shadow-lg transform transition duration-300 hover:scale-105"
+          className="w-1/4 bg-slate-50 rounded-full border-4 border-gray-700 shadow-lg transform transition duration-300 hover:scale-125"
         />
         <div className="text-left md:pl-12 space-y-6 pl-36">
           <h2 className="text-3xl md:text-4xl font-bold">

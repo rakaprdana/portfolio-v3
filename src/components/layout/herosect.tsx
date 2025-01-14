@@ -15,7 +15,7 @@ const HeroSection = () => {
         </div>
         <h1 className="font-bold text-4xl">Raka Pradana Martianus</h1>
         <p>Fullstack Software Developer</p>
-        <Button bgColor={"black"} textColor={"white"} label={"Contact me"} />
+        <Button bgColor={"black"} label={"Contact me"} textColor={"white"} />
       </div>
     </section>
   );

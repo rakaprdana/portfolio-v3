@@ -19,7 +19,7 @@ const List = ({
       <hr className="border-dashed border-l-4 border-white py-36" />
       <div className="w-full md:w-1/2 space-y-4 text-center md:text-left">
         <h1
-          className="font-extrabold text-3xl tracking-tight hover:text-cyan-400 hover:scale-110 transition duration-300"
+          className="font-extrabold text-3xl tracking-tight hover:text-cyan-400 transition duration-300"
           style={{
             textShadow: "2px 2px 4px rgba(255, 255, 255, 0.4)", // Tambahkan efek bayangan teks
           }}
