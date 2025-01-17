@@ -1,3 +1,4 @@
+"use client";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import CloseIcon from "@mui/icons-material/Close";
 import NextApp from "../../../public/icons8-nextjs.svg";
@@ -5,6 +6,12 @@ import Button from "../elements/button";
 import Image from "next/image";
 
 const HeroSection = () => {
+  const handleClick = () => {
+    const contactSection = document.getElementById("contact") as HTMLElement;
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <section className="px-8 py-40">
       <div className="flex flex-col items-center space-y-4">
@@ -15,7 +22,12 @@ const HeroSection = () => {
         </div>
         <h1 className="font-bold text-4xl">Raka Pradana Martianus</h1>
         <p>Fullstack Software Developer</p>
-        <Button bgColor={"black"} label={"Contact me"} textColor={"white"} />
+        <Button
+          onClick={handleClick}
+          bgColor={"black"}
+          label={"Contact me"}
+          textColor={"white"}
+        />
       </div>
     </section>
   );

@@ -3,6 +3,7 @@
 import axios, { AxiosResponse } from "axios";
 import { FormEvent, useState } from "react";
 import Button from "../button";
+import Modal from "../modal";
 interface ContactData {
   name: string;
   email: string;
@@ -14,6 +15,7 @@ const ContactMe = () => {
     email: "",
     message: "",
   });
+  const [isModal, setIsModal] = useState<boolean>(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -38,6 +40,20 @@ const ContactMe = () => {
       console.log("Error post data: ", error);
     }
   };
+  // const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   if (
+  //     formData.name.trim() == "" ||
+  //     formData.email.trim() == "" ||
+  //     formData.message.trim() == ""
+  //   ) {
+  //     alert("Please fill in all the fields before sending message");
+  //     return;
+  //   }
+  //   console.log(formData);
+  //   setIsModal(true);
+  //   setFormData({ name: "", email: "", message: "" });
+  // };
   return (
     <form
       onSubmit={handleSubmit}
@@ -76,6 +92,7 @@ const ContactMe = () => {
         textColor={"black"}
         label={"Send this message"}
       />
+      <Modal isOpen={isModal} onClose={() => setIsModal(false)} />
     </form>
   );
 };
