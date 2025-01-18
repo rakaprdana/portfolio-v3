@@ -23,15 +23,6 @@ const ExperienceSection = () => {
             "Involved in creating and developing the backend division's official campus website with MySQL and PHP technology. Collaborate with the team to ensure the website meets requirements and quality standards"
           }
         />
-        <List
-          number="3"
-          job={"Service Technician"}
-          location="LG Electronics Service"
-          time="Feb - May 2021"
-          description={
-            "Develop effective communication skills with customers to understand their needs and provide satisfactory service"
-          }
-        />
       </div>
     </section>
   );

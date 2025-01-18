@@ -3,6 +3,7 @@ import AboutSection from "@/components/layout/aboutsect";
 import ExperienceSection from "@/components/layout/expsect";
 import HeroSection from "@/components/layout/herosect";
 import ContactSection from "@/components/layout/contactsect";
+import SkillSection from "@/components/layout/skillsect";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <ExperienceSection />
+        <SkillSection id="skills" />
         <ContactSection id="contact" />
       </main>
     </div>
