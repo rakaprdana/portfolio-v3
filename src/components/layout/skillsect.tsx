@@ -37,7 +37,7 @@ const SkillSection = ({ id }: { id: string }) => {
         <CardSkills image={ExpreesJS} />
         <CardSkills image={MongoDB} />
       </div>
-      <div className="bg-slate-800 bg-opacity-30 flex justify-between w-2/3 rounded-lg shadow-2xl hover:shadow-cyan-400 hover:scale-105 transition duration-300">
+      <div className="bg-slate-800 bg-opacity-30 flex justify-between w-2/3 rounded-lg hover:scale-105 transition duration-300">
         {skillsData.map((data, index) => (
           <SkillsList key={index} title={data.title} skills={data.skills} />
         ))}

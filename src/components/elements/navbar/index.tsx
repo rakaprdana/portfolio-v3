@@ -19,6 +19,22 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleClick = (section: string) => {
+    const targetSection = document.getElementById(section);
+    if (targetSection) {
+      const offset = 130; // Jarak dari atas dalam piksel
+      const elementPosition =
+        targetSection.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 z-50 w-[98%] flex justify-between items-center md:ml-3 ml-1 p-4 mt-4 transition-all duration-700 ${
@@ -27,9 +43,20 @@ const Navbar = () => {
           : "border border-transparent bg-transparent duration-1000"
       }`}
     >
-      <h1 className="font-bold text-2xl ml-8">Porfolio</h1>
+      <h1 className="font-bold text-2xl ml-8">Portfolio</h1>
       <div className="hidden md:flex items-center space-x-8">
-        <a href="">About me</a>
+        <a
+          onClick={() => handleClick("skills")}
+          className="cursor-pointer font-medium hover:scale-125 active:scale-90 transition-all duration-300"
+        >
+          Skills
+        </a>
+        <a
+          onClick={() => handleClick("certificate")}
+          className="cursor-pointer font-medium hover:scale-125 active:scale-90 transition-all duration-300"
+        >
+          Certificate
+        </a>
         <Button
           bgColor="bg-transparent"
           textColor="slate-50"
@@ -53,8 +80,17 @@ const Navbar = () => {
         >
           <MenuIcon sx={{ fontSize: 30 }} />
         </button>
-        <a href="#about-me" className="text-white text-xl">
-          About Me
+        <a
+          onClick={() => handleClick("skills")}
+          className="cursor-pointer font-medium hover:scale-125 active:scale-90 transition-all duration-300"
+        >
+          Skills
+        </a>
+        <a
+          onClick={() => handleClick("certificate")}
+          className="cursor-pointer font-medium hover:scale-125 active:scale-90 transition-all duration-300"
+        >
+          Certificate
         </a>
         <Button
           bgColor="bg-transparent"
