@@ -22,26 +22,33 @@ const CertificateSection = ({ id }: { id: string }) => {
     },
   ];
   return (
-    <section id={id} className="bg-slate-800 rounded-lg shadow-lg mx-8 p-6">
-      <div className="flex items-center gap-4 mb-8">
-        <h1 className="text-4xl font-extrabold text-slate-50">Certificate</h1>
-        <hr className="flex-grow border-2 border-cyan-400 rounded-full" />
+    <section
+      id={id}
+      className="bg-slate-800 rounded-2xl shadow-xl mx-4 md:mx-8 lg:mx-16 p-6 md:p-10"
+    >
+      <div className="flex flex-col md:flex-row items-center md:gap-4 mb-8">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-slate-50 text-center md:text-left">
+          Certificate
+        </h1>
+        <hr className="w-full md:flex-grow border-2 border-cyan-400 rounded-full mt-4 md:mt-0" />
       </div>
       <ul>
         {data.map((item, index) => (
           <li
             key={index}
-            className={`bg-slate-200 shadow-md hover:shadow-lg transition-shadow duration-300 p-6 mb-6 rounded-lg cursor-pointer border ${
+            className={`bg-slate-100 shadow-md hover:shadow-lg transition-shadow duration-300 p-5 md:p-6 mb-4 md:mb-6 rounded-xl cursor-pointer border ${
               openIndex === index ? "border-cyan-500" : "border-gray-200"
             }`}
             onClick={() => toggleAccordion(index)}
           >
             <div className="flex items-center justify-between">
               <div>
-                <h2 className="text-lg font-semibold text-gray-700">
+                <h2 className="text-base md:text-lg font-semibold text-gray-800">
                   {item.name}
                 </h2>
-                <p className="text-sm text-gray-500">{item.role}</p>
+                <p className="text-sm md:text-base text-gray-500">
+                  {item.role}
+                </p>
               </div>
               <span
                 className={`text-gray-500 transform transition-transform duration-300 ${
@@ -52,12 +59,12 @@ const CertificateSection = ({ id }: { id: string }) => {
               </span>
             </div>
             <div
-              className={`overflow-hidden transition-[max-height] duration-500 ease-in-out ${
+              className={`md:overflow-hidden overflow-y-auto transition-[max-height] duration-500 ease-in-out ${
                 openIndex === index ? "max-h-40" : "max-h-0"
               }`}
               style={{ maxHeight: openIndex === index ? "10rem" : "0" }}
             >
-              <p className="mt-4 text-sm text-gray-600 leading-relaxed">
+              <p className="mt-4 text-sm md:text-base text-gray-600 leading-relaxed">
                 {item.description}
               </p>
             </div>

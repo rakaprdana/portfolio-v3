@@ -6,6 +6,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const elementA = [
+    { title: "Skills", onClick: () => handleClick("skills") },
+    { title: "Certificate", onClick: () => handleClick("certificate") },
+    { title: "Project", onClick: () => handleClick("project") },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -34,7 +41,14 @@ const Navbar = () => {
       });
     }
   };
-
+  const handleDownload = () => {
+    // File path relatif ke folder `public`
+    const fileUrl = "/files/RakaPradana-CV.pdf";
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = "RakaPradana-CV.pdf";
+    link.click();
+  };
   return (
     <nav
       className={`fixed top-0 left-0 z-50 w-[98%] flex justify-between items-center md:ml-3 ml-1 p-4 mt-4 transition-all duration-700 ${
@@ -45,26 +59,25 @@ const Navbar = () => {
     >
       <h1 className="font-bold text-2xl ml-8">Portfolio</h1>
       <div className="hidden md:flex items-center space-x-8">
-        <a
-          onClick={() => handleClick("skills")}
-          className="cursor-pointer font-medium hover:scale-125 active:scale-90 transition-all duration-300"
-        >
-          Skills
-        </a>
-        <a
-          onClick={() => handleClick("certificate")}
-          className="cursor-pointer font-medium hover:scale-125 active:scale-90 transition-all duration-300"
-        >
-          Certificate
-        </a>
+        {elementA.map((item, index) => (
+          <div key={index}>
+            <a
+              onClick={item.onClick}
+              className="cursor-pointer font-medium hover:text-cyan-400 active:text-cyan-600 transition-all duration-300"
+            >
+              {item.title}
+            </a>
+          </div>
+        ))}
         <Button
+          onClick={handleDownload}
           bgColor="bg-transparent"
           textColor="slate-50"
           label="Download CV"
         />
       </div>
       <button
-        className=" p-2 md:hidden text-white rounded-xl active:bg-white duration-300"
+        className=" p-2 md:hidden text-white rounded-xl duration-300"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         <MenuIcon sx={{ fontSize: 30 }} />
@@ -80,19 +93,18 @@ const Navbar = () => {
         >
           <MenuIcon sx={{ fontSize: 30 }} />
         </button>
-        <a
-          onClick={() => handleClick("skills")}
-          className="cursor-pointer font-medium hover:scale-125 active:scale-90 transition-all duration-300"
-        >
-          Skills
-        </a>
-        <a
-          onClick={() => handleClick("certificate")}
-          className="cursor-pointer font-medium hover:scale-125 active:scale-90 transition-all duration-300"
-        >
-          Certificate
-        </a>
+        {elementA.map((item, index) => (
+          <div key={index}>
+            <a
+              onClick={item.onClick}
+              className="cursor-pointer font-medium hover:scale-125 active:scale-90 transition-all duration-300"
+            >
+              {item.title}
+            </a>
+          </div>
+        ))}
         <Button
+          onClick={handleDownload}
           bgColor="bg-transparent"
           textColor="slate-50"
           label="Download CV"

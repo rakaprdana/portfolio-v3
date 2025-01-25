@@ -57,7 +57,7 @@ const ContactMe = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-gray-800 flex flex-col w-[55%] space-y-4 text-black p-8 rounded-t-xl shadow-2xl hover:shadow-cyan-500 duration-500"
+      className="bg-gray-800 flex flex-col w-full lg:w-[55%] space-y-4 text-black p-8 rounded-t-xl shadow-2xl hover:shadow-cyan-500 duration-500 mx-auto"
     >
       <input
         type="text"
@@ -65,7 +65,7 @@ const ContactMe = () => {
         value={formData.name}
         onChange={handleChange}
         placeholder="Your name"
-        className="p-4 bg-gray-800 text-white rounded-lg border border-gray-700 focus:ring-2 focus:ring-cyan-500 focus:outline-none transition duration-200"
+        className="p-4 bg-gray-800 text-white rounded-lg border border-gray-700 focus:ring-2 focus:ring-cyan-500 focus:outline-none transition-all duration-200"
         required
       />
       <input
@@ -74,7 +74,7 @@ const ContactMe = () => {
         value={formData.email}
         onChange={handleChange}
         placeholder="Your email"
-        className="p-4 bg-gray-800 text-white rounded-lg border border-gray-700 focus:ring-2 focus:ring-cyan-500 focus:outline-none transition duration-200"
+        className="p-4 bg-gray-800 text-white rounded-lg border border-gray-700 focus:ring-2 focus:ring-cyan-500 focus:outline-none transition-all duration-200"
         required
       />
       <textarea
@@ -82,16 +82,12 @@ const ContactMe = () => {
         id="message"
         value={formData.message}
         onChange={handleChange}
-        rows={10}
-        placeholder="Message!"
-        className="p-2 px-4 bg-gray-800 text-white rounded-lg border border-gray-700 focus:ring-2 focus:ring-cyan-500 focus:outline-none transition duration-200"
+        rows={6}
+        placeholder="Your message"
+        className="p-4 bg-gray-800 text-white rounded-lg border border-gray-700 focus:ring-2 focus:ring-cyan-500 focus:outline-none transition-all duration-200"
         required
       />
-      <Button
-        bgColor={"slate-50"}
-        textColor={"black"}
-        label={"Send this message"}
-      />
+      <Button bgColor="slate-50" textColor="black" label="Send this message" />
       <Modal isOpen={isModal} onClose={() => setIsModal(false)} />
     </form>
   );

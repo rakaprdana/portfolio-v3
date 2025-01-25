@@ -1,9 +1,6 @@
 "use client";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import CloseIcon from "@mui/icons-material/Close";
-import NextApp from "../../../public/icons8-nextjs.svg";
 import Button from "../elements/button";
-import Image from "next/image";
 
 const HeroSection = () => {
   const handleClick = () => {
@@ -17,10 +14,10 @@ const HeroSection = () => {
       <div className="flex flex-col items-center space-y-4">
         <div className="flex items-center">
           <AccountCircleIcon sx={{ fontSize: 80 }} />
-          <CloseIcon sx={{ fontSize: 20 }} />
-          <Image src={NextApp} alt={"Next App"} />
         </div>
-        <h1 className="font-bold text-4xl">Raka Pradana Martianus</h1>
+        <h1 className="font-bold text-center text-4xl">
+          Raka Pradana Martianus
+        </h1>
         <p>Fullstack Software Developer</p>
         <Button
           onClick={handleClick}
