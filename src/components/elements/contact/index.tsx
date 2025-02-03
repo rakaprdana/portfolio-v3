@@ -57,7 +57,7 @@ const ContactMe = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-gray-800 flex flex-col w-full lg:w-[55%] space-y-4 text-black p-8 rounded-t-xl shadow-2xl hover:shadow-cyan-500 duration-500 mx-auto"
+      className="bg-gray-800 flex flex-col w-full lg:w-1/3 space-y-4 text-black p-8 rounded-xl shadow-2xl duration-500 mx-auto"
     >
       <input
         type="text"

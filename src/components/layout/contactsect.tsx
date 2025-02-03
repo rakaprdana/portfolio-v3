@@ -1,11 +1,8 @@
-import ContactMe from "../elements/contact";
+import ContactProfileSection from "../elements/contact/section";
 
 const ContactSection = ({ id }: { id: string }) => {
   return (
-    <section
-      id={id}
-      className="bg-gradient-to-b from-gray-900 to-gray-700 flex flex-col items-center text-center"
-    >
+    <section id={id} className="flex flex-col items-center text-center">
       <div className="my-12">
         <h1 className="text-6xl md:text-[11rem] font-extrabold text-center ">
           Contact Me
@@ -16,7 +13,7 @@ const ContactSection = ({ id }: { id: string }) => {
           <hr className="flex-grow border-t-4 border-gray-300 rounded-e-lg" />
         </div>
       </div>
-      <ContactMe />
+      <ContactProfileSection />
     </section>
   );
 };

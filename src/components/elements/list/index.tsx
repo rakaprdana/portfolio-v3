@@ -9,7 +9,7 @@ interface ListProps {
 const List = ({ number, job, location, time, description }: ListProps) => {
   return (
     <div className="text-white flex flex-col md:flex-row justify-between items-center mt-4 mx-6 md:mx-28 space-y-6 md:space-y-0">
-      <div className="bg-gradient-to-r from-blue-500 to-purple-500 w-[7rem] h-[7rem] p-6 rounded-full flex justify-center items-center text-white text-5xl font-extrabold shadow-lg transform transition duration-300 hover:scale-110 hover:rotate-6">
+      <div className="bg-gradient-to-r from-blue-900 to-purple-800 w-[7rem] h-[7rem] p-6 rounded-full flex justify-center items-center text-white text-5xl font-extrabold shadow-lg transform transition duration-300 hover:scale-110 hover:rotate-6">
         {number}
       </div>
 
