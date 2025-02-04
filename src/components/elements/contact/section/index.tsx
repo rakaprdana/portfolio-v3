@@ -21,17 +21,21 @@ const ContactProfileSection = () => {
     },
   ];
   return (
-    <div className="bg-slate-700 p-4 rounded-lg md:flex items-center">
-      <div className="ml-16 text-left">
+    <div className="bg-slate-700 w-[85%] p-4 rounded-lg md:flex items-center">
+      <div className="md:ml-16 text-left">
         <Image
           src={PhotoProfile}
           alt={"me"}
-          className="border-2 border-gray-400 w-1/4 rounded-full mb-4"
+          className="border-2 border-gray-400 w-1/2 md:w-1/4 rounded-full mb-4"
         />
-        <h1 className="text-4xl font-bold">Raka Pradana Martianus</h1>
+        <h1 className="text-xl md:text-4xl font-bold">
+          Raka Pradana Martianus
+        </h1>
         <div className="flex gap-2 items-center mb-4">
-          <p className="italic">Full stack software Developer</p>
-          <hr className="border-2 border-slate-50 w-52 rounded-full" />
+          <p className="text-[8px] md:text-lg italic">
+            Full stack software Developer
+          </p>
+          <hr className="border-2 border-slate-50 w-36 md:w-52 rounded-full" />
         </div>
         {data.map((item, index) => (
           <div key={index} className="mb-2">

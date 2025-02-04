@@ -51,7 +51,7 @@ const Navbar = () => {
   };
   return (
     <nav
-      className={`fixed top-0 left-0 z-50 w-[98%] flex justify-between items-center md:ml-3 ml-1 p-4 mt-4 transition-all duration-700 ${
+      className={`fixed top-0 left-0 z-50 w-[98%] h-14 md:h-20 flex justify-between items-center md:ml-3 ml-1 p-4 mt-4 transition-all duration-700 ${
         scrolled
           ? "border border-slate-400 bg-gray-900 md:ml-3 ml-1 rounded-full"
           : "border border-transparent bg-transparent duration-1000"
@@ -82,6 +82,7 @@ const Navbar = () => {
       >
         <MenuIcon sx={{ fontSize: 30 }} />
       </button>
+      {/* Sidebar Start*/}
       <div
         className={`fixed top-0 right-0 w-64 h-full bg-gray-900 text-white flex flex-col items-center space-y-6 py-8 md:hidden transition-all duration-500 ${
           menuOpen ? "-translate-x-0 opacity-100" : "translate-x-full opacity-0"

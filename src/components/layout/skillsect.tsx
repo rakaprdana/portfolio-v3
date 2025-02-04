@@ -9,7 +9,7 @@ const SkillSection = ({ id }: { id: string }) => {
   const skillsData = [
     {
       title: "Hard Skills",
-      skills: ["Typescript", "JavaScript", "CSS", "HTML"],
+      skills: ["Typescript", "JavaScript", "CSS", "HTML", "MySql", "NoSql"],
     },
     {
       title: "Soft Skills",
@@ -23,7 +23,7 @@ const SkillSection = ({ id }: { id: string }) => {
   return (
     <section
       id={id}
-      className="flex flex-col items-center space-y-12 my-16 px-4 md:px-8"
+      className="flex flex-col items-center space-y-8 my-16 px-4 md:px-8"
     >
       <div className="w-full md:w-2/3 lg:w-1/2 flex items-center gap-4">
         <hr className="flex-grow border-2 border-gray-100 rounded-lg" />
@@ -33,10 +33,12 @@ const SkillSection = ({ id }: { id: string }) => {
         <hr className="flex-grow border-2 border-gray-100 rounded-lg" />
       </div>
       <h2 className="text-lg md:text-xl text-center">Tools For Programming</h2>
-      <div className="grid grid-cols-5 items-center md:flex justify-center gap-6 py-4 w-full md:w-3/4">
+      <div className="flex justify-center gap-8 w-full md:w-3/4">
         <CardSkills image={NextApp} />
         <CardSkills image={ReactApp} />
         <CardSkills image={TailwindCSS} />
+      </div>
+      <div className="flex items-center gap-8">
         <CardSkills image={ExpreesJS} />
         <CardSkills image={MongoDB} />
       </div>
