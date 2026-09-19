@@ -2,24 +2,13 @@ import CardSkills from "../elements/cards/skills";
 import NextApp from "../../../public/image/icons/icons8-nextjs.svg";
 import ReactApp from "../../../public/image/icons/icons8-react-js.svg";
 import TailwindCSS from "../../../public/image/icons/icons8-tailwind-css.svg";
+import Kotlin from "../../../public/image/icons/kotlin.png";
 import ExpreesJS from "../../../public/image/icons/icons8-express-js.svg";
 import MongoDB from "../../../public/image/icons/icon-MongoDB.svg";
-import SkillsList from "../elements/cards/skills/skill-list";
+import SkillList from "../elements/cards/skills/skill-list";
+import { SkillsListData } from "@/data/skill-data";
 const SkillSection = ({ id }: { id: string }) => {
-  const skillsData = [
-    {
-      title: "Hard Skills",
-      skills: ["Typescript", "JavaScript", "CSS", "HTML", "MySql", "NoSql"],
-    },
-    {
-      title: "Soft Skills",
-      skills: [
-        "Team Leadership",
-        "Presenting Skills",
-        "Brainstorm Facilitating",
-      ],
-    },
-  ];
+  const skillsData = SkillsListData;
   return (
     <section
       id={id}
@@ -37,16 +26,17 @@ const SkillSection = ({ id }: { id: string }) => {
         <CardSkills image={NextApp} />
         <CardSkills image={ReactApp} />
         <CardSkills image={TailwindCSS} />
+        <CardSkills image={Kotlin} />
       </div>
       <div className="flex items-center gap-8">
         <CardSkills image={ExpreesJS} />
         <CardSkills image={MongoDB} />
       </div>
-      <div className="bg-slate-800 bg-opacity-30 flex flex-wrap justify-center md:justify-between w-full md:w-2/3 rounded-lg p-4 hover:scale-105 transition-transform duration-300">
-        {skillsData.map((data, index) => (
-          <SkillsList key={index} title={data.title} skills={data.skills} />
+      <li className="bg-slate-800 bg-opacity-30 flex flex-wrap justify-center md:justify-between w-full md:w-2/3 rounded-lg p-4 hover:scale-105 transition-transform duration-300">
+        {skillsData.map((item) => (
+          <SkillList key={item.title} title={item.title} skills={item.skills} />
         ))}
-      </div>
+      </li>
     </section>
   );
 };
