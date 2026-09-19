@@ -1,7 +1,6 @@
 import Image from "next/image";
 import PhotoProfile from "../../../../../public/image/no-bg.png";
 import { GitHub, Instagram, LinkedIn } from "@mui/icons-material";
-import ContactMe from "..";
 const ContactProfileSection = () => {
   const data = [
     {
@@ -49,7 +48,7 @@ const ContactProfileSection = () => {
           </div>
         ))}
       </div>
-      <ContactMe />
+      {/* <ContactMe /> */}
     </div>
   );
 };
